@@ -2,6 +2,28 @@
 	"name": "ingesta_capa_bronce_plata",
 	"properties": {
 		"description": "Ingesta de datos desde la capa bronce hacía la capa plata",
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/data_021@outlook.com/Ingesta_capa_bronce_plata"
+				},
+				"linkedServiceName": {
+					"referenceName": "Conector_AzureDatabricks_DataFactory",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
 		"annotations": []
 	}
 }
